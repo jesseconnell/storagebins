@@ -12,11 +12,11 @@ There is a rack with four shelves, each shelf holding a total width of four unit
 
 **First, ignore colors completely** and enumerate the possible arrangements only in terms of bucket sizes.  The various arrangements are:
 
-| Type      | Composition          |                         |
-| --------- |:--------------------:| -----------------------:|
-| `I`       | 4 singles            |  ![alt text][TypeIg]    |
-| `II`      | 2 doubles            |  ![alt text][TypeIIg]   |
-| `III`     | 1 double + 2 singles |  ![alt text][TypeIIIg]  |
+| Type      | Composition          |                        |
+| :-------: |:--------------------:| :----------------------|
+| `I`       | 4 singles            | ![alt text][TypeIg]    |
+| `II`      | 2 doubles            | ![alt text][TypeIIg]   |
+| `III`     | 1 double + 2 singles | ![alt text][TypeIIIg]  |
 
 There are constraints on the combinations of rows possible.  (E.g., we cannot have four rows of type `I`).  We can just enumerate the possibilities, ignoring order (for now):
 
@@ -24,7 +24,7 @@ There are constraints on the combinations of rows possible.  (E.g., we cannot ha
 * (2) `I`, `II`, `III`, `III`  (two doubles on one shelf, other two on separate shelves)
 * (3) `III`, `III`, `III`, `III`  (Each shelf has one double)
 
-Now we can count the row permutations of each of the above.  For any case where type `III` is used, we add a factor of `3`, since there are three distinct orderings for type `III`:  (![alt text][TypeIIIa],  ![alt text][TypeIIIb],  or  ![alt text][TypeIIIc])
+Now we can count the row permutations of each of the above.  For any case where type `III` is used, we add a factor of `3`, since there are three distinct orderings for type `III`:  (![alt text][TypeIIIg])
 * (1) there are `(4 choose 2) = 6` ways.
 * (2) there are `(4! / 2) = 12` ways - `4!` but then divide by `2` only to avoid double-counting the `III`s.  _But then_ we multiply by `9` to account for the variations in type `III` arrangements on the two shelves.  So we use `12*9 = 108`.
 * (3) all shelves are type `III`, each shelf has 3 variations.  `3*3*3*3 = 81`
