@@ -12,7 +12,7 @@ There is a rack with four shelves, each shelf holding a total width of four unit
 
 **First, ignore colors completely** and enumerate the possible arrangements only in terms of bucket sizes.  The various arrangements are:
 
-| Type      | Composition          |  Visually               |
+| Type      | Composition          |                         |
 | --------- |:--------------------:| -----------------------:|
 | `I`       | 4 singles            |  ![alt text][TypeIg]    |
 | `II`      | 2 doubles            |  ![alt text][TypeIIg]   |
