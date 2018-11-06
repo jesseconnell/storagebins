@@ -12,13 +12,11 @@ There is a rack with four shelves, each shelf holding a total width of four unit
 
 **First, ignore colors completely** and enumerate the possible arrangements only in terms of bucket sizes.  The various arrangements are:
 
-| Type      | Composition          |  Example               |
-| --------- |:--------------------:| ----------------------:|
-| `I`       | 4 singles            |  ![alt text][TypeI]    |
-| `II`      | 2 doubles            |  ![alt text][TypeII]   |
-| `III`     | 1 double + 2 singles |  ![alt text][TypeIIIa] |
-
-*Note: remember we're only considering shape at this point, so ignore the colors in the images above - the intent was to show  the combinations of small/big buckets only!*
+| Type      | Composition          |  Visually               |
+| --------- |:--------------------:| -----------------------:|
+| `I`       | 4 singles            |  ![alt text][TypeIg]    |
+| `II`      | 2 doubles            |  ![alt text][TypeIIg]   |
+| `III`     | 1 double + 2 singles |  ![alt text][TypeIIIg]  |
 
 There are constraints on the combinations of rows possible.  (E.g., we cannot have four rows of type `I`).  We can just enumerate the possibilities, ignoring order (for now):
 
@@ -69,4 +67,7 @@ Anyway, as we go through all `12!` permutations of the buckets, and tally up eac
 [TypeIIIa]: https://raw.githubusercontent.com/jesseconnell/storagebins/master/images/Type_IIIa.png "TypeIIIa - D s s"
 [TypeIIIb]: https://raw.githubusercontent.com/jesseconnell/storagebins/master/images/Type_IIIb.png "TypeIIIb - s D s"
 [TypeIIIc]: https://raw.githubusercontent.com/jesseconnell/storagebins/master/images/Type_IIIc.png "TypeIIIc - s s D"
+[TypeIg]: https://raw.githubusercontent.com/jesseconnell/storagebins/master/images/Type_Ig.png "TypeIg"
+[TypeIIg]: https://raw.githubusercontent.com/jesseconnell/storagebins/master/images/Type_IIg.png "TypeIIg"
+[TypeIIIg]: https://raw.githubusercontent.com/jesseconnell/storagebins/master/images/Type_IIIg.png "TypeIIIg"
 [Rack]: https://raw.githubusercontent.com/jesseconnell/storagebins/master/images/Rack.png "Rack"
