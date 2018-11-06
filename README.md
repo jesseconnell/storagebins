@@ -20,18 +20,28 @@ There is a rack with four shelves, each shelf holding a total width of four unit
 
 There are constraints on the combinations of rows possible.  (E.g., we cannot have four rows of type `I`).  We can just enumerate the possibilities, ignoring order (for now):
 
-* (1) `I`, `I`, `II`, `II`   (all four doubles on two shelves)
-* (2) `I`, `II`, `III`, `III`  (two doubles on one shelf, other two on separate shelves)
-* (3) `III`, `III`, `III`, `III`  (Each shelf has one double)
+| Case | Shelf combination           |                                                     |
+|:----:|:--------------------------- |:--------------------------------------------------- |
+| (1)  | `I`, `I`, `II`, `II`        | All 4 doubles on two shelves                        |
+| (2)  | `I`, `II`, `III`, `III`     | 2 doubles on one shelf, other 2 on separate shelves |
+| (3)  | `III`, `III`, `III`, `III`  | Each shelf has 1 double, 2 singles                  |
 
-Now we can count the row permutations of each of the above.  For any case where type `III` is used, we add a factor of `3`, since there are three distinct orderings for type `III`:  (![alt text][TypeIIIg])
-* (1) there are `(4 choose 2) = 6` ways.
-* (2) there are `(4! / 2) = 12` ways - `4!` but then divide by `2` only to avoid double-counting the `III`s.  _But then_ we multiply by `9` to account for the variations in type `III` arrangements on the two shelves.  So we use `12*9 = 108`.
-* (3) all shelves are type `III`, each shelf has 3 variations.  `3*3*3*3 = 81`
+We count the variations of each of these cases separately and add them together.  Counting variations, we first consider the *row variations* (**P**) ignoring the sub-cases of Type `III` shelves.  Then we multiply this by a factor **F** which accounts for variations of Type `III` shelves.  Since each Type `III` shelf has `3` variations, if there are `N` shelves, then there are `3^N` variations.  
 
-The total ways to arrange the buckets, ignoring colors is 
+* In *Case (1)* there are none, so we use `F=3^0 = 1` (makes sense if you think about it)
+* In *Case (2)* there are `2`, so we use `F=3^2 = 9`
+* In *Case (3)* there are `4`, so we use `F=3^4 = 81`
 
-`6 + 108 + 81 = 195`.
+
+| Case | Row Permutations               | P      | Type `III` Shelves  | F *(`=3^P`)*    | Total Variations `= P*F`   |
+| :---:| :----------------------------- |:------:|:--------------------|:----------------|:----------------- |
+| (1)  | `4!/(2! * 2!)` *(4 choose 2)*  | `6`    | `0`                 | `1`             | **`6`**           |
+| (2)  | `4!/2!` *see note*             | `12`   | `2`                 | `9` *(`=3^2`)*  | **`108`**         |
+| (3)  | `1`                            | `1`    | `4`                 | `81` *(`=3^4`)* | **`81`**          |
+
+*Note: this is also (4 choose 2,1,1), using the "multinomial coefficient" discussed below"*
+
+Adding all these cases together, we get `6 + 108 + 81 = `**`195`**.  (Another way to think about this is if all buckets were the same color, this would be the total number of configurations for the rack.)
 
 Next, for each of the 195 shape-arrangements above, we **account for color ordering variations**.
 
